@@ -1,0 +1,20 @@
+# 可选 - 工作流的名称，它将出现在GitHub仓库的“Actions”选项卡中。
+name: learn-github-actions
+# 可选 — 从工作流生成的工作流运行的名称，它将出现在仓库的“Actions”选项卡上的工作流运行列表中。
+run-name: ${{ github.actor }} is learning GitHub Actions
+# 指定此工作流的触发器。本例使用了push事件，因此每当有人向仓库推送更改或提交一个合并请求时，就会触发工作流运行。
+on: [push]
+# 将在learn-github-actions工作流中运行的所有作业分组在一起。
+jobs:
+  # 定义名为check-bat-version的作业，子键将定义作业的属性。
+  check-bats-version:
+    # 配置作业在Ubuntu Linux运行器的最新版本上运行。
+    runs-on: ubuntu-latest
+    # 将在check-bat-version作业中运行的所有步骤组合在一起。嵌套在此部分下的每个项都是一个单独的操作或shell脚本。
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
