@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'demo/**'
-      - '.github/**'
+      - '.github/ci-in-demo-folder.yml'
 
 jobs:
   build:
