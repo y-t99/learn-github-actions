@@ -1,6 +1,7 @@
 # learn-github-actions
 
-### 步骤
-1. 新建一个文件夹boomboommm，文件夹下创建文件tool.py。
-2. 文件夹下添加setuptools必要文件setup.py，requirements.txt。
-3. 打包并发布到pypi网站。
+### steps
+1. add a new folder `boomboommm`, init it as python project。
+2. the folder add setup.py, requirements.txt.
+3. add some code.
+4. add ci/cd.
