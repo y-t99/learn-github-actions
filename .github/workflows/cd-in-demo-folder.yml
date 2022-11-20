@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel
         pip install -r requirements.txt
-        pip install twine
+
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
@@ -31,4 +31,4 @@ jobs:
       run: |
         cd demo
         python setup.py sdist bdist_wheel
-        twine upload dist/*
+        python -m twine upload dist/*
