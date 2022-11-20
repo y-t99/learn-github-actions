@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'demo/**'
-      - '.github/ci-in-demo-folder.yml'
+      - '.github/workflows/ci-in-demo-folder.yml'
 
 jobs:
   build:
