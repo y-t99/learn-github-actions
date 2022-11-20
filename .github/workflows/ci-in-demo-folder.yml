@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      # - 'demo/**'
+      - 'demo/**'
       - '.github/**'
 
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -27,6 +27,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel
         pip install -r requirements.txt
+
     - name: Build
       run: |
+        cd demo
         python setup.py sdist bdist_wheel
