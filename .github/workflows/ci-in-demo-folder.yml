@@ -34,9 +34,8 @@ jobs:
         python setup.py sdist bdist_wheel
 
     - name: Test
-      env:
-        TEST_ENV: ${{secrets.TEST_ENV}}
       run: |
         cd demo
+        export TEST_ENV=${{secrets.TEST_ENV}}
         pip install pytest
         pytest
